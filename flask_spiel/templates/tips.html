@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<!--hero section-->
+<div class="content-section mb-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+        <h1>Tips for a successful audition</h1>
+    <div class="container-image pt-5 mb-5">
+        <img class="image" src="../static/tips.png" alt="illustration of a woman reading tips for audition">
+    </div>
+    <!--tips section-->
+    <div class="container-info">
+        <div class="info" >
+            <h2>1. Learn your lines!</h2>
+        </div>
+        <div class="info" >
+            <p>If your character seems angry don’t go yelling at your auditionees. Instead find an alternative approach to that anger try keeping it inside and show some facial expressions that the pot is about to blow.</p>
+        </div>
+    </div>
+    <div class="container-info">
+        <div class="info" >
+            <h2>2. Reverse the verse</h2>
+        </div>
+        <div class="info" >
+            <p>Let it shine through. Don’t give one-word answers when having a conversation with the casting director. Ask questions! </p>
+        </div>
+     </div>
+     <div class="container-info">
+        <div class="info" >
+            <h2>3. React</h2>
+        </div>
+        <div class="info" >
+            <p>Use your own internal monologue to play out your characters reactions. If your character is sad try pull on a sad thought, if happy a happy one.</p>
+        </div>
+     </div>
+     <div class="container-info">
+        <div class="info" >
+            <h2>4. Ask questions</h2>
+        </div>
+        <div class="info" >
+            <p>Your auditions are not only about your performance it's a chance to pose questions to your auditionees about the project. Have some questions at the ready it’ll show great initiative.</p>
+        </div>
+     </div>
+     <div class="container-info">
+        <div class="info" >
+            <h2>5. Show passion</h2>
+        </div>
+        <div class="info" >
+            <p>You must have passion to go through the auditioning process. We won’t lie to you it’s a long road and only a few are so lucky to land that big role first time round. So keep your passions alive and learn from your mistakes, use every audition as a tool to better then next one.</p>
+        </div>
+     </div>        
+</div>
+<hr>
+<!--dynamic section for job board-->
+{% if current_user.is_authenticated %}
+{% else %}
+<div class="content-section col-md-6 mx-auto mb-5 pt-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+    <h3>Want to find audition near you? Login to access our job board!</h3>
+    <a class="btn-lg btn-outline-info pt-2 pb-2 pl-4 pr-4" href="{{url_for ('login')}}">Login</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+      {{super()}}
+      {% endblock %}

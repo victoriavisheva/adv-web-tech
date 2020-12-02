@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--dynamically loaded job posts-->
+    {% for post in posts %}
+        <article class="content-section col-ml-10 mb-5 pb-5">
+          <h1 class="pb-5">Job post</h1>
+          <div class="media-body">
+            <p class="article-content">Posted by: {{ post.author.username }}</p>
+            <h2>{{ post.title }}</h2>
+            <p class="article-content">Description: {{ post.description }}</p>
+            <p class="article-content">Date: {{ post.date }}</p>
+            <p class="article-content">Location: {{ post.location }}</p>
+            <p class="article-content">Pay: £{{ post.pay }}</p>
+            <p class="article-content">Contact details: {{ post.contact }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

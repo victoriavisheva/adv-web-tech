@@ -1,0 +1,174 @@
+body {
+  font: 1em sans-serif;
+  background-color: #edebe6;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #201f85;
+  }
+  a {
+    color: #201f85;
+    font-weight: bold;
+    text-decoration: #201f85;
+    font-size: 22px;
+  }
+  a:hover {
+    color: #201f85;
+  }
+  .navbar a {
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  p {
+    color: black;
+    font-size: 20px;
+  }
+  .btn-lg {
+    display: block;
+    width: 25%;
+    margin: auto;
+  }
+  .btn-lg:focus, .btn-lg:active, btn-lg:hover {
+    outline: none !important;
+    background: #201f85 !important;
+    color: white;
+    border: 1px solid #201f85 !important;
+  }
+  .btn-lg a {
+    text-align: center;
+      display: block;
+      margin: auto;
+  }
+  .btn-outline-info {
+    border-radius: 30px;
+    color: #201f85;
+    background-color: #edebe6;
+    border: 1px solid #201f85;
+    text-align: center;
+  }
+  .btn-outline-info:hover {
+    color: white;
+    background-color: #201f85;
+    border: 1px solid #201f85;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #201f85;
+    font-size: 22px;
+    margin: 10px;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #dd5300;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 600;
+    color: #dd5300;
+  }
+  
+  .content-section {
+    padding: 20px 30px;
+    margin-top: 40px;
+    text-align: left;
+  }
+  .content-section h1, h3, img {
+    text-align: center;
+  }
+  hr {
+    width: 90%;
+    border-top: 1px solid #201f85;
+}
+  
+  label {
+    color: #201f85;
+    text-align: left;
+  }
+  .form-control-lg {
+    border-radius: 30px;
+    background-color: #edebe6;
+    border: 1px solid #201f85;
+  }
+  .form-control-lg:focus {
+    background-color: #edebe6;
+  }
+  .form-control-lg::placeholder {
+    opacity: 0.3;
+  }
+  .success, .danger {
+    background-color: none;
+    color: orange;
+    border: none;
+  }
+  
+.actors img {
+  display: block;
+  margin: auto;
+}
+
+.container-info {
+  display: flex;
+  justify-content: center;
+}
+.info {
+  text-align: left;
+  margin: 30px 5px;
+  width: 100%;
+  font-size: 16px;
+}
+.info p {
+  margin-top: 0;
+}
+
+
+footer p {
+  color: #201f85;
+  text-align: left;
+  margin: 0;
+}
+
+
+#myInput {
+  width: 100%;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  padding: 12px 20px 12px 12px;
+  border: 1px solid #201f85;
+  border-radius: 30px;
+  background-color: #edebe6;
+}
+#myInput:focus {
+  outline: none;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+  overflow:hidden;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+#myTable .header {
+  background-color: #dedacf;
+}
+#myTable .header #myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr:hover {
+  background-color: #dedacf;
+}

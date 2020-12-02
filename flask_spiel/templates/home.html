@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<!--hero section with illustration underneath-->
+<div class="content-section col-ml-10 mx-auto mb-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+    <div class="container-hero"">
+        <h1 style="text-align: left;">Someone's spiel is a well-prepared speech that they make, and that they have usually made many times before, often in order to persuade you to buy something.</h1>
+        <h4>Definition of <strong><em>'spiel'</em></strong>, source: Collins Dictionary</h4>
+    </div>
+    <div class="content-section col-ml-10 mx-auto mb-5">
+        <img src="../static/actors.png" alt="illustration of actors"> 
+    </div>
+    <!--main web feature description section under illustration-->
+    <div class="container-info" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+        <div class="info"  >
+            <h2>Hand-picked monologues for acting auditions</h2>
+        </div>
+        <div class="info" >
+            <p>Have you ever navigated the vast back catalogue of monologues that's out there? Don’t worry we’ve got you covered, a simple click of the search bar and all will be revealed.</p>
+            <a href="{{url_for ('monologues')}}">Search monologues</a>
+        </div>
+    </div>
+    <div class="container-info" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+        <div class="info"  >
+            <h2>Tips for a successful audition</h2>
+        </div>
+        <div class="info" >
+            <p>Working with industry professionals we have collated only the best advice for any audition, whether it’s your first time treading the boards or the pressures on for that big movie role. Check out our tips page and start improving your approach!</p>
+        <a href="{{url_for ('tips')}}">Read our tips</a>
+        </div>
+    </div>
+</div>
+<hr>
+<!--dynamic section for job board-->
+{% if current_user.is_authenticated %}
+{% else %}
+<div class="content-section col-md-6 mx-auto mb-5 pt-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+    <h3>Want to find audition near you? Login to access our job board!</h3>
+    <a class="btn-lg btn-outline-info pt-2 pb-2 pl-4 pr-4" href="{{url_for ('login')}}">Login</a>
+</div>
+{% endif %}
+    {% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<!--hero section-->
+<div class="content-section col-ml-10 mx-auto mb-5 pb-5">
+    <h1 class="mb-5">Search our hand-picked monologues below</h1>
+     
+    <input class="mx-auto" type="text" id="myInput" onkeyup="myFunction()" autofocus placeholder="Search authors">
+    <!--table with hardcoded monologues-->
+    <table id="myTable" class="mt-5">
+      <tr class="header">
+        <th style="width:40%;">Author</th>
+        <th style="width:40%;">Play</th>
+        <th style="width:10%;">Genre</th>
+        <th style="width:10%;">Gender</th>
+      </tr>
+      <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>Henrik Ibsen</td>
+        <td>A Doll's House</td>
+        <td>Drama</td>
+        <td>Female</td>
+      </tr>
+      <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>William Shakespeare</td>
+        <td>Troilus and Cressida</td>
+        <td>Comedy</td>
+        <td>Male</td>
+      </tr>
+      <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>Oscar Wilde</td>
+        <td>The Importance of Being Earnest</td>
+        <td>Comedy</td>
+        <td>Female</td>
+      </tr>
+    <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>Anton Chekhov</td>
+        <td>The Bear</td>
+        <td>Comedy</td>
+        <td>Male</td>
+      </tr>
+    <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>Alice Gerstenberg</td>
+        <td>Ever Young</td>
+        <td>Drama</td>
+        <td>Female</td>
+      </tr>
+    <tr style='cursor: pointer; cursor: hand;' onclick="window.location='home';">
+        <td>William Shakespeare</td>
+        <td>Henry VIII</td>
+        <td>Drama</td>
+        <td>Male</td>
+      </tr>
+    </table>
+</div>
+<hr>
+<!--dynamic section for job board-->
+{% if current_user.is_authenticated %}
+{% else %}
+<div class="content-section col-md-6 mx-auto mb-5 pt-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+    <h3>Want to find audition near you? Login to access our job board!</h3>
+    <a class="btn-lg btn-outline-info pt-2 pb-2 pl-4 pr-4" href="{{url_for ('login')}}">Login</a>
+</div>
+{% endif %}
+<!--js script filtering table results; searches by author only-->
+<script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+
+    {% endblock %}
+
+    

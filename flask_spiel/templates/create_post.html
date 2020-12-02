@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--create ad form-->
+<div class="content-section col-md-8 mx-auto">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <!--title field-->
+        <fieldset class="form-group">
+            <h1 class="border-bottom mb-4">Create new ad</h1>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg", placeholder='Enter title') }}
+                {% endif %}
+            </div>
+            <!--description field-->
+            <div class="form-group">
+                {{ form.description.label(class="form-control-label") }}
+                {% if form.description.errors %}
+                    {{ form.description(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.description.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.description(class="form-control form-control-lg", placeholder='Enter description') }}
+                {% endif %}
+            </div>
+            <!--date field-->
+            <div class="form-group">
+                {{ form.date.label(class="form-control-label") }}
+                {% if form.date.errors %}
+                    {{ form.date(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.date.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.date(class="form-control form-control-lg", placeholder='Enter date') }}
+                {% endif %}
+            </div>
+            <!--location field-->
+            <div class="form-group">
+                {{ form.location.label(class="form-control-label") }}
+                {% if form.location.errors %}
+                    {{ form.location(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.location.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.location(class="form-control form-control-lg", placeholder='Enter location') }}
+                {% endif %}
+            </div>
+            <!--pay field-->
+            <div class="form-group">
+                {{ form.pay.label(class="form-control-label") }}
+                {% if form.pay.errors %}
+                    {{ form.pay(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.pay.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.pay(class="form-control form-control-lg", placeholder='Enter pay') }}
+                {% endif %}
+            </div>
+            <!--contact details field-->
+            <div class="form-group">
+                {{ form.contact.label(class="form-control-label") }}
+                {% if form.contact.errors %}
+                    {{ form.contact(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.contact.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.contact(class="form-control form-control-lg", placeholder='Enter contact number and email') }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <!--submit button-->
+        <div class="form-group">
+            {{ form.submit(class="btn-lg btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
